@@ -29,12 +29,11 @@ if letter_variable == word_variable[4]:
    
 
 ans = word_variable.count(letter_variable)
-if ans >= 1:
-    if ans == 1: 
-        print("1 instance of " + letter_variable + " found in " + word_variable)
-    if ans == 2: 
-        print("2 instances of " + letter_variable + " found in " + word_variable)
-    if ans == 3: 
-        print("3 instances of " + letter_variable + " found in " + word_variable)   
-else:
-    print("No instances of " + letter_variable + " found in " + word_variable)
+if ans == 1:
+    print(str(ans) + " instance of " + letter_variable + " found in " + word_variable)
+else: 
+
+    if ans > 1:
+        print(str(ans) + " instances of " + letter_variable + " found in " + word_variable)
+    else:
+        print("No instances of " + letter_variable + " found in " + word_variable)
