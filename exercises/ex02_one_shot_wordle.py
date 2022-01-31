@@ -24,7 +24,7 @@ if len(guess) == len(secret):
         if guess[a] == secret[a]: 
             print(GREEN_BOX)   
         else:
-            while fit == False:
+            while False and a < len(secret):
 
             else: 
                 print(WHITE_BOX)
