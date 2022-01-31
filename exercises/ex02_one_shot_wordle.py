@@ -5,7 +5,6 @@ __author__ = "730224294"
 secret: str = ("python")
 guess: str = input("What is your 6-letter guess? ")
 a: int = (0)
-guess_included: bool = False
 # assign answer as an empty string so you can add things to it
 answer: str = ("")
 
@@ -25,6 +24,7 @@ if len(guess) == len(secret):
         else:
             # assign new variable "b" so you do not interfere with variable "a"
             b: int = (0)
+            guess_included: bool = False
             while not guess_included and b < len(guess):
                 if secret[b] == guess[a]:
                     guess_included = True
