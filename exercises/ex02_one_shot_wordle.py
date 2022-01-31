@@ -5,8 +5,8 @@ __author__ = "730224294"
 secret: str = ("python")
 guess: str = input("What is your 6-letter guess? ")
 a: int = (0)
-first: str = guess[a]
 guess_included: bool = False
+# assign answer as an empty string so you can add things to it
 answer: str = ("")
 
 WHITE_BOX: str = "\U00002B1C"
@@ -20,8 +20,10 @@ while len(guess) != len(secret):
 if len(guess) == len(secret):
     while a < len(secret):
         if guess[a] == secret[a]: 
+            # reassign answer variable so you can add boxes as a str
             answer = answer + GREEN_BOX  
         else:
+            # assign new variable "b" so you do not interfere with variable "a"
             b: int = (0)
             while not guess_included and b < len(guess):
                 if secret[b] == guess[a]:
