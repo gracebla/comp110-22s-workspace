@@ -2,35 +2,40 @@
 
 __author__ = "730224294"
 
-from numpy import char
-
-
 secret: str = ("python")
 guess: str = input("What is your 6-letter guess? ")
-first: str = guess[0]
+a: int = (0)
+first: str = guess[a]
+guess_included: bool = False
+answer: str = ("")
 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-a: int = (0)
-character_in_guess: str = (guess[a]) 
 
 
-if len(guess) != len(secret):
+while len(guess) != len(secret):
     guess = input("That was not 6 letters! Try again: ")    
 
 if len(guess) == len(secret):
     while guess != secret and a < len(secret):
         if guess[a] == secret[a]: 
-            print(GREEN_BOX)   
+            answer = answer + GREEN_BOX  
         else:
-            while False and a < len(secret):
-
+            b: int = (0)
+            while not guess_included and b < len(guess):
+                if secret[b] == guess[a]:
+                    guess_included = True
+                b = b + 1
+            if guess_included: 
+                answer = answer + YELLOW_BOX
             else: 
-                print(WHITE_BOX)
+                answer = answer + WHITE_BOX    
         a = a + 1
-print("Not quite. Play again soon!")
-(exit)
+    print(answer)    
+    print("Not quite. Play again soon!")
+
 if guess == secret:
-    print(GREEN_BOX + GREEN_BOX + GREEN_BOX + GREEN_BOX + GREEN_BOX + GREEN_BOX)
     print("Woo! You got it!")   
+else: 
+    print("Not Quite!")
