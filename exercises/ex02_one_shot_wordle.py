@@ -18,7 +18,7 @@ while len(guess) != len(secret):
     guess = input("That was not 6 letters! Try again: ")    
 
 if len(guess) == len(secret):
-    while guess != secret and a < len(secret):
+    while a < len(secret):
         if guess[a] == secret[a]: 
             answer = answer + GREEN_BOX  
         else:
@@ -33,9 +33,8 @@ if len(guess) == len(secret):
                 answer = answer + WHITE_BOX    
         a = a + 1
     print(answer)    
-    print("Not quite. Play again soon!")
 
 if guess == secret:
     print("Woo! You got it!")   
 else: 
-    print("Not Quite!")
+    print("Not quite. Play again soon!")
