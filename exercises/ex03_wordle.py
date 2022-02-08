@@ -23,7 +23,7 @@ def contains_char(guess: str, char: str) -> bool:
 def emojified(guess: str, secret: str) -> str: 
     """Returns string of emojis identifying correct characters in guess."""
     b: int = 0
-    ans: str = " "
+    ans: str = ""
     assert len(guess) == len(secret)
     while b < len(secret):
         if guess[b] == secret[b]: 
@@ -49,16 +49,16 @@ def main() -> None:
     secret: str = "codes"   
     number_of_turns: int = 1
     result_of_game: bool = False
-    while number_of_turns < 7 and result_of_game == False:
-        print(f"=== Turn {number_of_turns} /6 === ")
+    while number_of_turns < 7 and result_of_game is not True:
+        print(f"=== Turn {number_of_turns}/6 === ")
         users_guess: str = input_guess(len(secret))
         print(emojified(users_guess, secret))
         if users_guess == secret: 
             result_of_game = True
             print(f"You won in {number_of_turns}/6 turns!")
         number_of_turns += 1
-    if result_of_game == False: 
-        print("X/6 - Sorry, try again tomorrow!")
+        if result_of_game is False: 
+            print("X/6 - Sorry, try again tomorrow!")
 
 
 if __name__ == "__main__":
