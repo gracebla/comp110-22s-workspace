@@ -10,11 +10,19 @@ colormode(255)
 def main() -> None: 
     """The entrypoint of my scene."""
     scene: Turtle = Turtle()
+    scene.speed()
     draw_grass(scene, -370, -100, 750)
     draw_mountains(scene, 100, 0, -100)
     draw_mountains(scene, 200, 100, -100)
     draw_mountains(scene, 150, -300, -100)
     draw_sun(scene, -200, 140)
+    draw_mosaic(scene, -360, -100, 50)
+    draw_mosaic(scene, 100, -200, 65)
+    draw_mosaic(scene, -100, -137, 65)
+    draw_mosaic(scene, 300, -150, 44)
+    draw_mosaic(scene, -150, -300, 70)
+    draw_mosaic(scene, 200, -320, 56)
+    draw_mosaic(scene, -300, -300, 80)
     done()
 
 
@@ -69,6 +77,25 @@ def draw_sun(third_turtle: Turtle, x: float, y: float) -> None:
         third_turtle.circle(70)
     third_turtle.end_fill()
 
+
+def draw_mosaic(fourth_turtle: Turtle, x: float, y: float, width: float) -> None: 
+    """Draw the mosaic part of the grass of the scene."""
+    fourth_turtle.color(89, 223, 36)
+    fourth_turtle.penup()
+    fourth_turtle.goto(x, y)
+    fourth_turtle.setheading(0.0)
+    fourth_turtle.pendown()
+    i: int = 0
+    while i < 4:
+        fourth_turtle.forward(width)
+        fourth_turtle.right(90)
+        i += 1
+    fourth_turtle.begin_fill()
+    for _ in range(4):
+        fourth_turtle.forward(width)
+        fourth_turtle.right(90)
+    fourth_turtle.end_fill()
+   
 
 if __name__ == "__main__":
     main()
