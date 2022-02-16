@@ -1,4 +1,4 @@
-"""Beautiful and tranquil mountain scene. Incorporates randomness from the random module in the mosaic grass that was created."""
+"""Scene description."""
 
 __author__ = 730224294
 
@@ -16,28 +16,13 @@ def main() -> None:
     draw_mountains(scene, 200, 100, -100)
     draw_mountains(scene, 150, -300, -100)
     draw_sun(scene, -200, 140)
-    from random import randint
-    i: int = 0
-    while i < 8: 
-        x: int = randint(-370, 370)
-        y: int = randint(-300, -100)
-        w: int = randint(25, 75)
-        draw_mosaic(scene, x, y, w)
-        i += 1
-    z: int = 0
-    while z < 8:
-        a: int = randint(-370, 370)
-        b: int = randint(-300, -100)
-        c: int = randint(25, 75) 
-        draw_second_mosaic(scene, a, b, c)
-        z += 1
-    g: int = 0
-    while g < 8:
-        s: int = randint(-370, 370)
-        t: int = randint(-300, -100)
-        r: int = randint(25, 75) 
-        draw_third_mosaic(scene, s, t, r)
-        g += 1
+    draw_mosaic(scene, -360, -100, 50)
+    draw_mosaic(scene, 100, -200, 65)
+    draw_mosaic(scene, -100, -137, 65)
+    draw_mosaic(scene, 300, -150, 44)
+    draw_mosaic(scene, -150, -300, 70)
+    draw_mosaic(scene, 200, -320, 56)
+    draw_mosaic(scene, -300, -300, 80)
     done()
 
 
@@ -110,44 +95,6 @@ def draw_mosaic(fourth_turtle: Turtle, x: float, y: float, width: float) -> None
         fourth_turtle.forward(width)
         fourth_turtle.right(90)
     fourth_turtle.end_fill()
-
-
-def draw_second_mosaic(fifth_turtle: Turtle, x: float, y: float, width: float) -> None: 
-    """Draw the second color green mosaic part of the grass of the scene."""
-    fifth_turtle.color(118, 187, 92)
-    fifth_turtle.penup()
-    fifth_turtle.goto(x, y)
-    fifth_turtle.setheading(0.0)
-    fifth_turtle.pendown()
-    i: int = 0
-    while i < 4:
-        fifth_turtle.forward(width)
-        fifth_turtle.right(90)
-        i += 1
-    fifth_turtle.begin_fill()
-    for _ in range(4):
-        fifth_turtle.forward(width)
-        fifth_turtle.right(90)
-    fifth_turtle.end_fill()
-   
-
-def draw_third_mosaic(sixth_turtle: Turtle, x: float, y: float, width: float) -> None: 
-    """Draw the second color green mosaic part of the grass of the scene."""
-    sixth_turtle.color(59, 107, 41)
-    sixth_turtle.penup()
-    sixth_turtle.goto(x, y)
-    sixth_turtle.setheading(0.0)
-    sixth_turtle.pendown()
-    i: int = 0
-    while i < 4:
-        sixth_turtle.forward(width)
-        sixth_turtle.right(90)
-        i += 1
-    sixth_turtle.begin_fill()
-    for _ in range(4):
-        sixth_turtle.forward(width)
-        sixth_turtle.right(90)
-    sixth_turtle.end_fill()
    
 
 if __name__ == "__main__":
