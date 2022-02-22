@@ -7,7 +7,7 @@ def only_evens(guess: list[int]) -> list[int]:
     """Test to return even numbers present in a list."""
     i: int = 0
     ans: list[int] = list()
-    while i < len(guess):
+    while guess[i] < len(guess):
         for item in guess: 
             if item % 2 == 0:
                 ans.append(guess[i])
