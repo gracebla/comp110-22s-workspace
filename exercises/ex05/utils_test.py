@@ -55,14 +55,14 @@ def test_concat_empty() -> None:
 
 
 def first_test_concat() -> None: 
-    """"Use test that concats two separate lists."""
+    """Use test that concats two separate lists."""
     xs: list[int] = [1, 2, 3, 4]
     gb: list[int] = [5, 6, 7]
     assert concat(xs, gb) == [1, 2, 3, 4, 5, 6, 7]
 
 
 def second_test_concat() -> None: 
-    """"Second use test that concats two separate lists."""
+    """Second use test that concats two separate lists."""
     xs: list[int] = [5, 10, 15]
     gb: list[int] = [20, 25, 30]
     assert concat(xs, gb) == [5, 10, 15, 20, 25, 30]

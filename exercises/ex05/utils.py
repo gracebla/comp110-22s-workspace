@@ -5,10 +5,9 @@ __author__ = 730224294
 
 def only_evens(guess: list[int]) -> list[int]:
     """Test to return even numbers present in a list."""
-    start_len: int = len(guess)
     i: int = 0
     ans: list[int] = list()
-    while i < start_len:
+    while i < len(guess):
         for item in guess: 
             if item % 2 == 0:
                 ans.append(guess[i])
@@ -19,7 +18,7 @@ def only_evens(guess: list[int]) -> list[int]:
 def sub(a_list: list[int], a: int, b: int) -> list[int]:
     """Return two specific integers of a list."""
     return_list: list[int] = list()
-    while a < b:
+    while a < b or a < len(a_list):
         return_list.append(a_list[a])
         a += 1
     return return_list
