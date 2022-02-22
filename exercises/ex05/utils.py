@@ -19,6 +19,8 @@ def only_evens(guess: list[int]) -> list[int]:
 def sub(a_list: list[int], a: int, b: int) -> list[int]:
     """Return two specific integers of a list."""
     return_list: list[int] = list()
+    if a < 0:
+        a = 0
     while a < b and a < len(a_list):
         return_list.append(a_list[a])
         a += 1
