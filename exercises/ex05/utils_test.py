@@ -33,10 +33,10 @@ def test_sub_empty() -> None:
 
 def first_test_sub() -> None:
     """Use test that returns designated values in short list."""
-    xs: list[int] = [1, 2, 3, 4]
+    xs: list[int] = [1]
     g: int = (1)
-    h: int = (3)
-    assert sub(xs, g, h) == [1, 3]
+    h: int = (1)
+    assert sub(xs, g, h) == []
 
 
 def second_test_sub() -> None: 
