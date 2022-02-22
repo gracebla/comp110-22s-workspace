@@ -3,7 +3,7 @@
 __author__ = 730224294
 
 
-def only_evens(guess: list[int]) -> list:
+def only_evens(guess: list[int]) -> list[int]:
     """Test to return even numbers present in a list."""
     start_len: int = len(guess)
     i: int = 0
@@ -16,7 +16,7 @@ def only_evens(guess: list[int]) -> list:
     return ans
 
 
-def sub(a_list: list[int], a: int, b: int) -> list:
+def sub(a_list: list[int], a: int, b: int) -> list[int]:
     """Return two specific integers of a list."""
     return_list: list[int] = list()
     while a < b:
@@ -25,7 +25,7 @@ def sub(a_list: list[int], a: int, b: int) -> list:
     return return_list
 
 
-def concat(first_list: list[int], second_list: list[int]) -> list:
+def concat(first_list: list[int], second_list: list[int]) -> list[int]:
     """Generate new list which merges two lists together."""
     new_list: list[int] = list()
     i: int = 0
