@@ -11,16 +11,22 @@ def test_only_evens_empty() -> None:
     assert only_evens(xs) == []
 
 
-def first_test_only_evens() -> None:
+def test_only_evens_first() -> None:
     """Use case that tests short lists for even integers."""
-    xs: list[int] = [1, 2, 3]
-    assert only_evens(xs) == [2]
-
-
-def second_test_only_evens() -> None:
-    """Second use case that tests short list for even integers."""
-    xs: list[int] = [2, 4, 5, 6]
+    xs: list[int] = [2, 4, 6]
     assert only_evens(xs) == [2, 4, 6]
+
+
+def test_only_evens_second() -> None:
+    """Second use case that tests short list for even integers."""
+    xs: list[int] = [1, 5, 6]
+    assert only_evens(xs) == [6]
+
+
+def test_third_test_only_evens() -> None:
+    """Use case that tests short lists for even integers."""
+    xs: list[int] = [-2, -4, 7]
+    assert only_evens(xs) == [-2, -4]
 
 
 def test_sub_empty() -> None:
