@@ -2,7 +2,7 @@
 
 __author__ = 730224294
 
-from dictionary import invert, favorite_color
+from dictionary import invert, favorite_color, count
 import pytest
 
 
@@ -45,3 +45,9 @@ def test_favorite_color_second() -> None:
 with pytest.raises(KeyError):
     my_dictionary = {'Grace': 'Blake', 'Kathryn': 'Blake'}
     invert(my_dictionary)
+
+
+def test_count() -> None:
+    """Use case to create new dictionary from a list."""
+    xs: list[str] = ["apple", "bannana", "apple", "strawberry"]
+    assert count(xs) == {'apple': 2, 'bannana': 1, 'strawberry': 1}
