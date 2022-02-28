@@ -55,7 +55,7 @@ def test_count() -> None:
 
 def test_count_empty() -> None: 
     """Edge case to test count function."""
-    xs: list = []
+    xs: list[str] = []
     assert count(xs) == {}
 
 
