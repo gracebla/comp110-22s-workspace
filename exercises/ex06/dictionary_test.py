@@ -51,3 +51,15 @@ def test_count() -> None:
     """Use case to create new dictionary from a list."""
     xs: list[str] = ["apple", "bannana", "apple", "strawberry"]
     assert count(xs) == {'apple': 2, 'bannana': 1, 'strawberry': 1}
+
+
+def test_count_empty() -> None: 
+    """Edge case to test count function."""
+    xs: list = []
+    assert count(xs) == {}
+
+
+def test_count_second() -> None: 
+    """Second use case to test count function."""
+    xs: list[str] = ["UNC", "Duke", "UNC", "NC State", "NC State", "UNC"]
+    assert count(xs) == {'UNC': 3, 'Duke': 1, 'NC State': 2}

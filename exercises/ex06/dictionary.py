@@ -34,4 +34,10 @@ def favorite_color(color: dict[str, str]) -> str:
 def count(counter: list[str]) -> dict[str, int]:
     """Creates a dictionary that shows how many times certain strings were present in a list."""
     new_dict: dict[str, int] = {}
-    
+    for item in counter:
+        current_item = item
+        if item in new_dict:
+            new_dict[current_item] += 1 
+        else: 
+            new_dict[current_item] = 1 
+    return new_dict
