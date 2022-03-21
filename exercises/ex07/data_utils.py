@@ -40,7 +40,7 @@ def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
     for column in column_table:
         new_list: list[str] = []
         starting: int = 0 
-        while starting < N:
+        while starting < N and starting < len(column_table[column]):
             new_list.append(column_table[column][starting])
             starting += 1
         result[column] = new_list 
@@ -61,7 +61,10 @@ def concat(table1: dict[str, list[str]], table2: dict[str, list[str]]) -> dict[s
     for column in table1:
         result[column] = table1[column]
     for column in table2:
-        result[column] = table2[column]
+        if column in result: 
+            result[column].append(table2[column][0])
+        else: 
+            result[column] = table2[column]
     return result
 
 
