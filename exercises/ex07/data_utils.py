@@ -37,13 +37,40 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(column_table: dict[str, list[str]], N: int) -> dict[str, list[str]]:
     """Produce a new column based table with N rows of data."""   
     result: dict[str, list[str]] = {}
-    first_row: dict[str, str] = column_table[0]
-    for column in first_row:
+    for column in column_table:
         new_list: list[str] = []
         starting: int = 0 
-        while starting <= N:
-            new_list.append(column[starting])
+        while starting < N:
+            new_list.append(column_table[column][starting])
             starting += 1
-        result[column] = column_values
-   
+        result[column] = new_list 
     return result 
+
+
+def select(original: dict[str, list[str]], mutated: list[str]) -> dict[str, list[str]]:
+    """Produce a new column-based table with only specific subset of original columns."""
+    result: dict[str, list[str]] = {}
+    for column in mutated:
+        result[column] = original[column]
+    return result
+
+
+def concat(table1: dict[str, list[str]], table2: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Produce a new column based table with two column based tables combined."""
+    result: dict[str, list[str]] = {}
+    for column in table1:
+        result[column] = table1[column]
+    for column in table2:
+        result[column] = table2[column]
+    return result
+
+
+def count(original_list: list[str]) -> dict[str, int]:
+    """Produces a dictionary that lists the number of times a value appears in a list."""
+    result: dict[str, int] = {}
+    for column in original_list:
+        if column in result:
+            result[column] += 1
+        else: 
+            result[column] = 1
+    return result
