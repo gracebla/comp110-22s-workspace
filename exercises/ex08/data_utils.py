@@ -79,12 +79,13 @@ def count(original_list: list[str]) -> dict[str, int]:
     return result
 
 
-def avg(original_dict: dict[str, int]) -> float:
+def avg(original_dict: list[str]) -> float:
     """Takes a list of integers and produces an average for that list."""
     avg_counter: int = 0
     counter: int = 0
-    for value in original_dict: 
-        avg_counter += original_dict[value]
+    for item in original_dict: 
+        number: int = int(item)
+        avg_counter += number
         counter += 1
     avg_counter = avg_counter // counter
     return avg_counter
