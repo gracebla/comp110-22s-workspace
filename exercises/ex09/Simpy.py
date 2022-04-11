@@ -69,4 +69,51 @@ class Simpy:
                 answer.append(self.values[i] ** rhs.values[i])
         return Simpy(answer)
 
-        
+    def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Create a mask based on equality of each item in values to some other Simpy object."""
+        mask: list[bool] = []
+        if isinstance(rhs, float):
+            for item in self.values:
+                if item == rhs:
+                    mask.append(True)
+                else:
+                    mask.append(False)
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            for i in range(len(self.values)):
+                if self.values[i] == rhs.values[i]:
+                    mask.append(True)
+                else:
+                    mask.append(False)
+        return mask
+
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Produce a mask of a Simpy that shows whether the values are greater than a certain float or other Simpy."""
+        mask: list[bool] = []
+        if isinstance(rhs, float):
+            for item in self.values:
+                if item > rhs:
+                    mask.append(True)
+                else:
+                    mask.append(False)
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            for i in range(len(self.values)):
+                if self.values[i] == rhs.values[i]:
+                    mask.append(True)
+                else:
+                    mask.append(False)   
+        return mask  
+
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Add subscription notation to Simpy."""
+        answer: list[float] = []
+        if isinstance(rhs, int):
+            for i in range(len(self.values)):
+                if i == rhs:
+                    return self.values[i]
+        else:
+            for i in range(len(self.values)):
+                if rhs[i] is True:
+                    answer.append(self.values[i])
+        return Simpy(answer)
