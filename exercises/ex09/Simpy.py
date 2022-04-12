@@ -8,6 +8,7 @@ __author__ = "730224294"
 
 
 class Simpy:
+    """Creation of new object Simpy with one attribute."""
     values: list[float]
 
     def __init__(self, values: list[float]):
@@ -99,13 +100,13 @@ class Simpy:
         if isinstance(rhs, Simpy):
             assert len(self.values) == len(rhs.values)
             for i in range(len(self.values)):
-                if self.values[i] == rhs.values[i]:
+                if self.values[i] > rhs.values[i]:
                     mask.append(True)
                 else:
                     mask.append(False)   
         return mask  
 
-    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[Simpy, float]:
         """Add subscription notation to Simpy."""
         answer: list[float] = []
         if isinstance(rhs, int):
